@@ -78,8 +78,8 @@ export function longestRepetition(text: string): [string, number] {
 		return ["", 0];
 	}
 
-	const arr: [string, number][] = [[text[0], 0]];
-
+	const arr: [string, number][] = [[text[0], 0]]
+	
 	for (const letter of text) {
 		if (letter === arr[arr.length - 1][0]) {
 			arr[arr.length - 1][1]++;
@@ -88,14 +88,7 @@ export function longestRepetition(text: string): [string, number] {
 		}
 	}
 
-	let longestOption = arr[0];
-	for (const subArr of arr) {
-		if (subArr[1] > longestOption[1]) {
-			longestOption = subArr;
-		}
-	}
-
-	return longestOption;
+	return arr.filter(subArr => subArr[1] === Math.max(...arr.map(subArr => subArr[1])))[0]
 }
 
 const test1 = 'aaaabb' // ['a', 4]
