@@ -1,7 +1,7 @@
 // function sumOfMinimums(arr) {
 //   let sum = 0
 
-//   arr.map(subArr => {
+//   arr.forEach(subArr => {
 //     subArr.sort()
 //     sum += subArr[0]
 //   })
