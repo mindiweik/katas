@@ -106,3 +106,22 @@ console.log(longestRepetition(test4)) // ['b', 5]
 console.log(longestRepetition(test5)) // ['a', 2]
 console.log(longestRepetition(test6)) // ['b', 1]
 console.log(longestRepetition(test7)) // ['', 0]
+
+/**
+ * I also really like this approach:
+ * 
+export function longestRepetition(text: string): [string, number] {
+  return text
+    .split("")
+    .reduce((acc:[string, number][], curr) => {
+      const last = acc[acc.length - 1];
+      if (!!last && last[0] === curr) {
+        last[1] += 1;
+      } else {
+        acc.push([curr, 1]);
+      }
+      return acc;
+    }, [])
+    .reduce((acc, curr) => (curr[1] > acc[1] ? curr : acc), ["", 0]);
+}
+ */
