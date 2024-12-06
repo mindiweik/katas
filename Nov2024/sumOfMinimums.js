@@ -25,3 +25,9 @@ const test3 = [[23, 69, 88, 64, 63, 139], [128, 41, 67, 43, 103, 27], [39, 54, 1
 console.log(sumOfMinimums(test1))
 console.log(sumOfMinimums(test2))
 console.log(sumOfMinimums(test3))
+
+/**
+ * I came across this option for the edge case and I like it better. It's simpler and cleaner.
+ *   if (!text) return ['', 0];
+ * 
+ */
