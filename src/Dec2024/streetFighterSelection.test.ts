@@ -8,7 +8,7 @@ const fighters = [
 type Move = 'down' | 'up' | 'right' | 'left'
 let moves: Move[] = []
 
-describe('Testing...', function () {
+describe(streetFighterSelection.name, function () {
   it('should work with few moves', function () {
     moves = ['up', 'left', 'right', 'left', 'left']
     const actual = streetFighterSelection(fighters, [0, 0], moves)

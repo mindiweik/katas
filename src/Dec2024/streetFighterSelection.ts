@@ -13,6 +13,6 @@ const fighters = [
 ]
 let moves: Move[] = []
 
-export function streetFighterSelection(fighters: string[][], position: number[], moves: Move[]) {
+export const streetFighterSelection = (fighters: string[][], position: number[], moves: Move[]) => {
   // Your code here!
 }

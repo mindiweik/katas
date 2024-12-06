@@ -72,7 +72,7 @@ export function longestRepetition(text: string): [string, number] {
  * Attempt at refactoring:
  */
 
-export function longestRepetition(text: string): [string, number] {
+export const longestRepetition = (text: string): [string, number] => {
   if (text.length === 0) {
     return ['', 0]
   }
@@ -89,22 +89,6 @@ export function longestRepetition(text: string): [string, number] {
 
   return arr.filter((subArr) => subArr[1] === Math.max(...arr.map((subArr) => subArr[1])))[0]
 }
-
-const test1 = 'aaaabb' // ['a', 4]
-const test2 = 'bbbaaabaaaa' // ['a', 4]
-const test3 = 'cbdeuuu900' // ['u', 3]
-const test4 = 'abbbbb' // ['b', 5]
-const test5 = 'aabb' // ['a', 2]
-const test6 = 'ba' // ['b', 1]
-const test7 = '' // ['', 0]
-
-console.log(longestRepetition(test1)) // ['a', 4]
-console.log(longestRepetition(test2)) // ['a', 4]
-console.log(longestRepetition(test3)) // ['u', 3]
-console.log(longestRepetition(test4)) // ['b', 5]
-console.log(longestRepetition(test5)) // ['a', 2]
-console.log(longestRepetition(test6)) // ['b', 1]
-console.log(longestRepetition(test7)) // ['', 0]
 
 /**
  * I also really like this approach:
