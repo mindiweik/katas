@@ -14,7 +14,7 @@ type Move = 'down' | 'up' | 'right' | 'left'
 // 	const result: string[] = []
 // 	let x = position[0]
 // 	let y = position[1]
-	
+
 // 	for (const move of moves) {
 // 		if (move === 'up') {
 // 			x = (x === 1) ? 0 : 0
@@ -32,29 +32,32 @@ type Move = 'down' | 'up' | 'right' | 'left'
 // 	return result
 // }
 
-
 /**
  * Refactored:
  */
 
 export const streetFighterSelection = (fighters: string[][], position: number[], moves: Move[]) => {
-  const result: string[] = []
+  const length = fighters[0].length - 1
   let x = position[0]
   let y = position[1]
 
-  for (const move of moves) {
+  return moves.map((move) => {
     if (move === 'up') {
-      x = x === 1 ? 0 : 0
+      x = 0
     } else if (move === 'down') {
-      x = x === 0 ? 1 : 1
+      x = 1
     } else if (move === 'left') {
-      y = y === 0 ? fighters[0].length - 1 : y - 1
+      y = !y ? length : y - 1
     } else if (move === 'right') {
-      y = y === fighters[0].length - 1 ? 0 : y + 1
+      y = y === length ? 0 : y + 1
     }
 
-    result.push(fighters[x][y])
-  }
-
-  return result
+    return fighters[x][y]
+  })
 }
+
+/**
+ * Notes:
+ *
+ * I liked that someone used a decrement/increment for the y value
+ */
