@@ -1,7 +1,13 @@
 export function capitalize(s: string): [string, string] {
-	const evens = s.split('').map((char, i) => i % 2 === 0 ? char.toUpperCase() : char).join('')
-	const odds = s.split('').map((char, i) => i % 2 !== 0 ? char.toUpperCase() : char).join('')
-	return [evens, odds]
+  const evens = s
+    .split('')
+    .map((char, i) => (i % 2 === 0 ? char.toUpperCase() : char))
+    .join('')
+  const odds = s
+    .split('')
+    .map((char, i) => (i % 2 !== 0 ? char.toUpperCase() : char))
+    .join('')
+  return [evens, odds]
 }
 
 // export function capitalize(s: string): [string, string] {
@@ -20,8 +26,6 @@ export function capitalize(s: string): [string, string] {
 // 	return [evens, odds]
 // }
 
-
-
 const test1 = capitalize('abcdef')
 const test2 = capitalize('codewars')
 const test3 = capitalize('abracadabra')
@@ -35,7 +39,6 @@ console.log(test3) // ["AbRaCaDaBrA", "aBrAcAdAbRa"]
 console.log(test4) // ["CoDeWaRrIoRs", "cOdEwArRiOrS"]
 console.log(test5) // ["InDeXiNgLeSsOnS", "iNdExInGlEsSoNs"]
 console.log(test6) // ["CoDiNgIsAfUnAcTiViTy", "cOdInGiSaFuNaCtIvItY"]
-
 
 /**
  * Options I liked:

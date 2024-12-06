@@ -36,16 +36,15 @@ export function longestRepetition(text: string): [string, number] {
 }
 	*/
 
-
 /**
  * This solution works, but is a naive solution:
  */
 // export function longestRepetition(text: string): [string, number] {
-	
+
 // 	if (text.length === 0) {
 // 		return ['', 0]
 // 	}
-	
+
 // 	let currentChar = text[0]
 // 	const arr: [string, number][] = [[currentChar, 0]]
 
@@ -74,21 +73,21 @@ export function longestRepetition(text: string): [string, number] {
  */
 
 export function longestRepetition(text: string): [string, number] {
-	if (text.length === 0) {
-		return ["", 0];
-	}
+  if (text.length === 0) {
+    return ['', 0]
+  }
 
-	const arr: [string, number][] = [[text[0], 0]]
-	
-	for (const letter of text) {
-		if (letter === arr[arr.length - 1][0]) {
-			arr[arr.length - 1][1]++;
-		} else {
-			arr.push([letter, 1]);
-		}
-	}
+  const arr: [string, number][] = [[text[0], 0]]
 
-	return arr.filter(subArr => subArr[1] === Math.max(...arr.map(subArr => subArr[1])))[0]
+  for (const letter of text) {
+    if (letter === arr[arr.length - 1][0]) {
+      arr[arr.length - 1][1]++
+    } else {
+      arr.push([letter, 1])
+    }
+  }
+
+  return arr.filter((subArr) => subArr[1] === Math.max(...arr.map((subArr) => subArr[1])))[0]
 }
 
 const test1 = 'aaaabb' // ['a', 4]
