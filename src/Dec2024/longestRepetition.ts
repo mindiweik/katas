@@ -69,7 +69,7 @@ export function longestRepetition(text: string): [string, number] {
 // }
 
 /**
- * Attempt at refactoring:
+ * Refactored:
  */
 
 export const longestRepetition = (text: string): [string, number] => {

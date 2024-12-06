@@ -19,15 +19,15 @@ const test3 = [
 ]
 
 describe(sumOfMinimums.name, () => {
-  it('should return 9', () => {
-    assert.strictEqual(sumOfMinimums(test1), 9)
+  it('should return with 9', () => {
+    assert.deepStrictEqual(sumOfMinimums(test1), 9)
   })
 
-  it('should return 76', () => {
-    assert.strictEqual(sumOfMinimums(test2), 76)
+  it('should return with 76', () => {
+    assert.deepStrictEqual(sumOfMinimums(test2), 76)
   })
 
-  it('should return 89', () => {
-    assert.strictEqual(sumOfMinimums(test3), 89)
+  it('should return with 89', () => {
+    assert.deepStrictEqual(sumOfMinimums(test3), 89)
   })
 })
