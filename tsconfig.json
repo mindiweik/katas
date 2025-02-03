@@ -11,7 +11,7 @@
     "useUnknownInCatchVariables": true,
     "skipLibCheck": false
   },
-  "include": ["src/**/*.ts", "src/2025/01Jan/fix_countdown.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules/**/*",
   ]
