@@ -2,8 +2,18 @@ import assert from 'assert'
 import { towerBuilder } from './towerBuilder'
 
 describe(towerBuilder.name, () => {
-  it('should describe the expected result', () => {
-    const actual = 'actual'
-    assert.deepStrictEqual(actual, 'actual')
-  })
+  it('should return ["*"]', () => {
+    const actual = towerBuilder(1)
+		assert.deepStrictEqual(actual, ['*'])
+	})
+	
+	it('should return [" * ","***"]', () => {
+		const actual = towerBuilder(2)
+		assert.deepStrictEqual(actual, [' * ','***'])
+	})
+
+	it('should return ["  *  "," *** ","*****"]', () => {
+		const actual = towerBuilder(3)
+		assert.deepStrictEqual(actual, ['  *  ',' *** ','*****'])
+	})
 })
