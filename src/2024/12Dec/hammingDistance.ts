@@ -8,7 +8,7 @@
 // 	a.split('').forEach((char, index) => {
 // 		if (char !== b[index]) {
 // 			result++
-// 		}		
+// 		}
 // 	})
 
 // 	return result
@@ -18,7 +18,7 @@
  * Refactored:
  */
 export const hammingDistance = (a: string, b: string): number => {
-	return a.split('').filter((char, index) => char !== b[index]).length
+  return a.split('').filter((char, index) => char !== b[index]).length
 }
 
 /**

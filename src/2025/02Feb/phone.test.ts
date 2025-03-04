@@ -1,8 +1,6 @@
 import assert from 'assert'
 import { directory, phone } from './phone'
 
-
-
 const testing = (string: string, num: string, expected: string) => {
   assert.equal(phone(string, num), expected)
 }

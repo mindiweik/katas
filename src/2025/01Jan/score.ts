@@ -143,40 +143,40 @@ Example scoring
 
 export const score = (dice: number[]): number => {
   let finalScore = 0
-	const joinedDice = dice.join('')
-	
-	const amounts = [
-		joinedDice.match(/(1)/g)?.length || 0,
-		joinedDice.match(/(2)/g)?.length || 0,
-		joinedDice.match(/(3)/g)?.length || 0,
-		joinedDice.match(/(4)/g)?.length || 0,
-		joinedDice.match(/(5)/g)?.length || 0,
-		joinedDice.match(/(6)/g)?.length || 0
-	]
+  const joinedDice = dice.join('')
 
-	amounts.forEach((amount, index) => {
-		if (index === 0) {
-			if (amount >= 3) {
-				finalScore += 1000
-				amount -= 3
-			}
-			if (amount > 0) {
-				finalScore += amount * 100
-			}
-		} else if (index === 4) {
-			if (amount >= 3) {
-				finalScore += 500
-				amount -= 3
-			}
-			if (amount > 0) {
-				finalScore += amount * 50
-			}
-		} else {
-			if (amount >= 3) {
-				finalScore += (index + 1) * 100
-			}
-		}
-	})
+  const amounts = [
+    joinedDice.match(/(1)/g)?.length || 0,
+    joinedDice.match(/(2)/g)?.length || 0,
+    joinedDice.match(/(3)/g)?.length || 0,
+    joinedDice.match(/(4)/g)?.length || 0,
+    joinedDice.match(/(5)/g)?.length || 0,
+    joinedDice.match(/(6)/g)?.length || 0,
+  ]
+
+  amounts.forEach((amount, index) => {
+    if (index === 0) {
+      if (amount >= 3) {
+        finalScore += 1000
+        amount -= 3
+      }
+      if (amount > 0) {
+        finalScore += amount * 100
+      }
+    } else if (index === 4) {
+      if (amount >= 3) {
+        finalScore += 500
+        amount -= 3
+      }
+      if (amount > 0) {
+        finalScore += amount * 50
+      }
+    } else {
+      if (amount >= 3) {
+        finalScore += (index + 1) * 100
+      }
+    }
+  })
 
   return finalScore
 }
