@@ -57,6 +57,7 @@ const num =
   '15-098-512-2222,9-421-674-8974,3-498-512-2222,12-099-500-8000,8-931-512-4855,' +
   '3-098-512-2222'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const numList = num.split(',')
 
 /**
@@ -123,10 +124,10 @@ export const phone = (string: string, num: string): string => {
   }
 }
 
-console.log(phone(directory, numList[0])) // "Phone => 1-541-754-3010, Name => J Steeve, Address => 156 Alphand St."
+// console.log(phone(directory, numList[0])) // "Phone => 1-541-754-3010, Name => J Steeve, Address => 156 Alphand St."
 // console.log(phone(directory, '1-555-555-5555')) // "Error => Not found: 1-555-555-5555"
 // console.log(phone(directory, '1-541-754-3010'))
-console.log(phone(directory, '2-908-512-2222'))
+// console.log(phone(directory, '2-908-512-2222'))
 
 /**
  * Refactored:
