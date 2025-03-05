@@ -35,24 +35,27 @@
  * Refactored:
  */
 export const decipherThis = (str: string): string => {
-  return str.split(' ').map((word) => {
-    const firstChar = String.fromCharCode(Number(word.match(/(\d+)/g)?.[0]))
-    const remainingCharList = word.match(/\D/g)
-    let remaining = ''
-		if (remainingCharList) {
-      const temp = remainingCharList[0]
-      remainingCharList[0] = remainingCharList[remainingCharList.length - 1]
-      remainingCharList[remainingCharList.length - 1] = temp
-      remaining = remainingCharList.join('')
-    }
-    return firstChar + remaining
-  }).join(' ')
+  return str
+    .split(' ')
+    .map((word) => {
+      const firstChar = String.fromCharCode(Number(word.match(/(\d+)/g)?.[0]))
+      const remainingCharList = word.match(/\D/g)
+      let remaining = ''
+      if (remainingCharList) {
+        const temp = remainingCharList[0]
+        remainingCharList[0] = remainingCharList[remainingCharList.length - 1]
+        remainingCharList[remainingCharList.length - 1] = temp
+        remaining = remainingCharList.join('')
+      }
+      return firstChar + remaining
+    })
+    .join(' ')
 }
 
 /**
  * Notes:
  * There are plenty of clever regex patterns that can be used,
  * but they are often a bit difficult to understand upon first glance.
- * 
+ *
  * I prefer the more readable approach!
  */

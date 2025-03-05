@@ -20,10 +20,9 @@
 //   return ret
 // }
 
-
 /**
  * This one wasn't easily able to be tested in this context.
- * 
+ *
  * The issue is that in the global scope somewhere, the `Array.prototype` had a
  * method called `Dammit` added to it, which was causing issues with the countdown function.
  * The `fix_countdown` function removes this method to ensure the countdown works correctly.
