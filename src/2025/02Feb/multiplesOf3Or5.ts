@@ -13,17 +13,17 @@ Note: If the number is a multiple of both 3 and 5, only count it once.
  */
 
 export const multiplesOf3Or5 = (num: number) => {
-	if (num < 0) return 0
+  if (num < 0) return 0
 
-	const multiples = []
+  const multiples = []
 
-	for (let i = num - 1; i >= 0; i--) {
-		if (i % 3 === 0 || i % 5 === 0) {
-			multiples.push(i)
-		}
-	}
+  for (let i = num - 1; i >= 0; i--) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      multiples.push(i)
+    }
+  }
 
-	return multiples.reduce((acc, curr) => acc + curr, 0)
+  return multiples.reduce((acc, curr) => acc + curr, 0)
 }
 
 /**
