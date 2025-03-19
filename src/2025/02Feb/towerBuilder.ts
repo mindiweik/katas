@@ -38,15 +38,15 @@
  */
 
 export const towerBuilder = (nFloors: number): string[] => {
-	const result: string[] = []
+  const result: string[] = []
 
-	for (let i = 0; i < nFloors; i++) {
-		const spaces = ' '.repeat(nFloors - i - 1)
-		const stars = '*'.repeat(2 * i + 1)
-		result.push(spaces + stars + spaces)
-	}
+  for (let i = 0; i < nFloors; i++) {
+    const spaces = ' '.repeat(nFloors - i - 1)
+    const stars = '*'.repeat(2 * i + 1)
+    result.push(spaces + stars + spaces)
+  }
 
-	return result
+  return result
 }
 
 /**

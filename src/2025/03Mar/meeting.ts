@@ -3,10 +3,14 @@
  */
 
 export const meeting = (s: string): string => {
-	return s.split(';').map((name) => {
-		const [firstName, lastName] = name.toUpperCase().split(':')
-		return `(${lastName}, ${firstName})`
-	}).sort().join('')
+  return s
+    .split(';')
+    .map((name) => {
+      const [firstName, lastName] = name.toUpperCase().split(':')
+      return `(${lastName}, ${firstName})`
+    })
+    .sort()
+    .join('')
 }
 
 // console.log(
