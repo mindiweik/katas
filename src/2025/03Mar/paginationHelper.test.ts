@@ -48,5 +48,5 @@ describe(PaginationHelper.name, () => {
   it('should return -1', () => {
     const actual = actualHelper.pageIndex(-10)
     assert.deepStrictEqual(actual, -1)
-	})
+  })
 })
