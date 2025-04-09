@@ -38,50 +38,47 @@ You will need to output the full 16 digit driving license number, in all UPPERCA
 const monthNames = {
   Jan: '01',
   January: '01',
-	Feb: '02',
-	February: '02',
-	Mar: '03',
-	March: '03',
-	Apr: '04',
-	April: '04',
+  Feb: '02',
+  February: '02',
+  Mar: '03',
+  March: '03',
+  Apr: '04',
+  April: '04',
   May: '05',
-	Jun: '06',
-	June: '06',
-	Jul: '07',
-	July: '07',
-	Aug: '08',
-	August: '08',
-	Sep: '09',
-	September: '09',
-	Oct: '10',
-	October: '10',
-	Nov: '11',
-	November: '11',
-	Dec: '12',
-	December: '12',
+  Jun: '06',
+  June: '06',
+  Jul: '07',
+  July: '07',
+  Aug: '08',
+  August: '08',
+  Sep: '09',
+  September: '09',
+  Oct: '10',
+  October: '10',
+  Nov: '11',
+  November: '11',
+  Dec: '12',
+  December: '12',
 }
 
 export const driver = (data: string[]): string => {
-	const [forename, middleName, surname, dateOfBirth, gender] = data
-	const [day, month, year] = dateOfBirth.split('-')
+  const [forename, middleName, surname, dateOfBirth, gender] = data
+  const [day, month, year] = dateOfBirth.split('-')
 
-	const monthNumber = month in monthNames ? monthNames[month as keyof typeof monthNames] : (() => { throw new Error('Invalid month') })()
+  const monthNumber =
+    month in monthNames
+      ? monthNames[month as keyof typeof monthNames]
+      : (() => {
+          throw new Error('Invalid month')
+        })()
 
-	const surnameCode = (surname + '99999').slice(0, 5).toUpperCase()
-	const decadeCode = year[2]
-	const yearCode = year[3]
-	const monthCode = gender === 'F' ? String(Number(monthNumber) + 50) : monthNumber
-	const firstMiddleNameCode = (forename[0] + (middleName[0] || '9')).toUpperCase()
+  const surnameCode = (surname + '99999').slice(0, 5).toUpperCase()
+  const decadeCode = year[2]
+  const yearCode = year[3]
+  const monthCode = gender === 'F' ? String(Number(monthNumber) + 50) : monthNumber
+  const firstMiddleNameCode = (forename[0] + (middleName[0] || '9')).toUpperCase()
 
-	return (
-		surnameCode + 
-		decadeCode +
-		monthCode +
-		day +
-		yearCode +
-		firstMiddleNameCode +
-		'9AA'
-	)
+  return surnameCode + decadeCode + monthCode + day + yearCode + firstMiddleNameCode + '9AA'
 }
 
 /**
