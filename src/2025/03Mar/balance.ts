@@ -34,8 +34,9 @@ const EXPENSE_LINE_PATTERN = /^(\d+)\s+([a-zA-Z\s]+)\s*[^0-9]*([\d.]+)$/
 export const balance = (book: string) => {
   const lines = book.replace(CLEAN_LINE_PATTERN, '').split('\n').filter(Boolean)
 
-  const originalBalance = lines[0].match(FIRST_LINE_PATTERN)?.join('')
-  if (!originalBalance) return 'There was an issue parsing the original balance.'
+  const originalBalanceString = lines[0].match(FIRST_LINE_PATTERN)?.join('')
+  if (!originalBalanceString) return 'There was an issue parsing the original balance.'
+  const originalBalance = Number.parseFloat(originalBalanceString).toFixed(2)
   lines.shift()
 
   let balance: number = Number.parseFloat(originalBalance)
