@@ -9,7 +9,7 @@ describe(balance.name, () => {
 127 Video! 7.45
 128 Book :14.32
 129 Gasoline ::16.10`
-  
+
   const testInput2 = `1000.00!=
 
 125 Market; !=:125.45
