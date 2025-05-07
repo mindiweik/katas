@@ -28,5 +28,3 @@ export function multiplicationTable(size: number): number[][] {
 /**
  * Notes:
  */
-
-
