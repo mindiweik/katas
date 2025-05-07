@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * This solution works, but is a naive solution:
@@ -207,7 +208,6 @@ const addToMap = (map: Map<string, any>, key: string, currentValue: number | boo
   return map
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function findTheNotFittingElement(series: any[]): number | string | boolean | null {
   let results: Map<string, any> = new Map()
 
