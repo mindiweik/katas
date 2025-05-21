@@ -198,9 +198,13 @@ const upperCharRegex = /[A-Z]/
 const lowerCharRegex = /[a-z]/
 const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/
 
-const addToMap = (map: Map<string, any>, key: string, currentValue: number | boolean | string): Map<string, any> => {
+const addToMap = (
+  map: Map<string, any>,
+  key: string,
+  currentValue: number | boolean | string,
+): Map<string, any> => {
   if (map.has(key)) {
-    map.set(key, ([...map.get(key), currentValue]))
+    map.set(key, [...map.get(key), currentValue])
   } else {
     map.set(key, [currentValue])
   }
