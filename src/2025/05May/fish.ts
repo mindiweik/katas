@@ -13,7 +13,7 @@
 //     .map((fish) => parseInt(fish))
 //     .filter((fish) => fish > 0)
 // 		.sort()
-	
+
 //   if (shoalArr.length === 0) {
 //     return 1
 //   }
@@ -29,7 +29,7 @@
 //       amountNeededForIncrease = currentSize * 4
 //     }
 // 	}
-	
+
 //   return currentSize
 // }
 
@@ -38,23 +38,23 @@
  */
 
 export const fish = (shoal: string): number => {
-	let currentSize = 1
-	let consumedFish = 0
-	let amountNeededForNextIncrease = 4
+  let currentSize = 1
+  let consumedFish = 0
+  let amountNeededForNextIncrease = 4
 
-	const pond: { [key:string]: number } = {}
+  const pond: { [key: string]: number } = {}
 
-	for (const fish of shoal) {
-		pond[fish] = pond[fish] ? pond[fish] + 1 : 1
-	}
+  for (const fish of shoal) {
+    pond[fish] = pond[fish] ? pond[fish] + 1 : 1
+  }
 
-	for (const fishSize in pond) {
-		let inspectSize = parseInt(fishSize)
-		if (inspectSize <= currentSize) {
+  for (const fishSize in pond) {
+    let inspectSize = parseInt(fishSize)
+    if (inspectSize <= currentSize) {
       consumedFish = consumedFish + inspectSize * pond[inspectSize]
     }
 
-		while (inspectSize >= 0) {
+    while (inspectSize >= 0) {
       if (consumedFish - amountNeededForNextIncrease >= 0) {
         currentSize++
         consumedFish = consumedFish - amountNeededForNextIncrease
@@ -62,8 +62,7 @@ export const fish = (shoal: string): number => {
       }
       inspectSize--
     }
-
-	}
+  }
 
   return currentSize
 }

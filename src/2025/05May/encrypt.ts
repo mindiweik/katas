@@ -27,7 +27,8 @@ export const encrypt = (text: string | null, n: number): string | null => {
   let result = [...text]
 
   while (n > 0) {
-    const odds = [], evens = []
+    const odds = [],
+      evens = []
 
     for (let i = 0; i < result.length; i++) {
       if (i % 2 === 0) {
@@ -58,7 +59,8 @@ export const decrypt = (encryptedText: string | null, n: number): string | null 
     const evens = result.slice(half)
 
     let decrypted = ''
-    let o = 0, e = 0
+    let o = 0,
+      e = 0
 
     for (let i = 0; i < result.length; i++) {
       if (i % 2 === 0) {
